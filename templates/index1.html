@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>Stock Profit Calculator</title>
+</head>
+  <body>
+    <h1>Stock Profit Calculator</h1>
+
+    <form action="/" method="POST">
+      <table>
+        <tbody>
+        <tr>
+            <td>Please enter a sysmbol:<input name="symbol" type="text" /></td>
+        </tr>
+        </tbody>
+      </table>
+        <input type="submit" value="Submit" />
+        <br>
+        {% if(data): %}
+        <tr>
+
+              Ticket Symbol:
+              {{data.ticketSymbol}}<br>
+
+              Time:
+              {{data.time}}<br>
+
+              Full name of Stock:
+              {{data.fullname}}<br>
+
+              Stock Price:
+              {{data.stockprice}}<br>
+
+              Increase Share Price:
+              {{data.change}}<br>
+
+              Change Percent:
+              {{data.changePercent}}<br>
+
+            </td>
+
+          </tr>
+        {% endif %}
+    {% if(error): %}
+    <td>
+        <br>Error :
+        {{ error.error }}
+    </td>
+    {% endif %}
+
+    </form>
+  </body>
+
+
+
+
